@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GeeksHubsAcademy.com - Curso de JUnit, Jacoco y Mockito</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+      body { font-family: 'Droid Serif'}
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      th, td {
+        border: 1px solid grey;
+        padding: 0.4em;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      .remark-slide-content {
+        font-size: 1.6em;
+        padding-left: 6em;
+      }
+      .remark-slide-content h1 {
+        font-size: 1.8em;
+        text-align: center;
+        letter-spacing: 0.1em;
+      }
+      .small .remark-code {
+        font-size: 0.4em;
+      }
+      .medium .remark-code {
+        font-size: 0.6em;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      /* Two-column layout */
+    .left-column {
+      color: #777;
+      width: 20%;
+      height: 92%;
+      float: left;
+    }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+    .right-column {
+      width: 75%;
+      float: right;
+      padding-top: 1em;
+    }
+    .footer {
+        position: absolute;
+        bottom: 3em;
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+    .footer .orange {
+      color: #FF3D00;
+    }
+    .toc {
+      padding-left: 4em;
+      font-size: 1.5em;
+    }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+background-image: url(imgs/bg.jpg)
+
+# Curso de Spring Framework
+## Nivel Básico
+.footer.left[
+Mariano Eloy Fernández Osca
+  .orange[
+    geekshubsacademy.com
+  ]
+]
+---
+layout: true
+background-image: url(imgs/bg.jpg)
+
+---
+# Contenido: Resumen
+.toc[
+1. Qué es Spring Framework
+2. Módulos de Spring
+6. Ejercicios
+]
+---
+# Qué es Spring Framework
+
+> "Es un conjunto de módulos (librerías) para construir aplicaciones en Java"
+
+https://spring.io/docs/reference
+
+https://spring.io/projects
+---
+# Módulos
+.toc[
+- Core
+- Boot
+- Web
+- REST
+- SOAP
+- Security
+- Data
+- Aspects
+- Integration
+- Actuator
+- ... (+50)
+]
+---
+# Arquitectura
+.toc[
+![](imgs/spring-modules.png)
+]
+---
+# Ejemplo: Aplicación Web Mínima
+
+Paso 1: Crear la estructura de proyecto
+
+http://start.spring.io/
+
+![](imgs/dependencias-minimas.png)
+.toc[
+![](imgs/generar-proyecto.png)
+]
+
+---
+# Ejemplo: Aplicación Web Mínima
+
+Paso 2: Crear la clase con `main()` y `@Controller`
+```java
+@SpringBootApplication
+@Controller
+public class CursoSpringframeworkApplication {
+
+	public static void main(String[] args) {
+		args = new String[] {"--spring.profiles.active=v01"};
+		SpringApplication.run(CursoSpringframeworkApplication.class, args);
+	}
+
+    @RequestMapping("/hello")
+    @ResponseBody
+    String home() {
+        return "Hello World!";
+    }
+
+}
+```
+---
+class: center, middle
+
+# ¿Cómo es posible que un simple clase muestre una página web?
+---
+# Spring Boot: Magia
+.toc[
+![](imgs/magic.gif)
+]
+---
+# Spring Boot: Explicación gráfica
+.toc[
+![](imgs/springboot.jpg)
+]
+---
+# Spring Boot: Qué hace
+
+1. Crea un Tomcat embebido
+2. Crea un Contexto de Java Beans
+3.
+---
+# Configurar Preferencias de Eclipse
+.toc[
+![](imgs/maven-sources.png)
+]
+---
+# Ejercicio:
+1. Poner un punto de interrupción en el `return` y seguir la traza
+## TODO
+2. Separar en una clase aparte el `@Controller`
+---
+# Magia 1: Front Controller
+.toc[
+![](imgs/front-controller.png)
+]
+
+---
+# Spring Boot Properties
+https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+
+---
+# Core
+
+http://projects.spring.io/spring-framework/
+---
+# What people say about these slides
+
+.toc[
+"Absolutely amazing" &#955; &#955; &#955;
+
+                                - The Rolling Code
+
+"Best slides ever" &#9829; &#9829; &#9829;
+
+                                - Times Magazilla
+
+]
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true,
+        ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>
